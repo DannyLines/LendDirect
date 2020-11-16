@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+
+        <title>The HTML5 Herald</title>
+        <meta name="description" content="The HTML5 Herald">
+        <meta name="author" content="SitePoint">
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/output.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+
+
+
+        <div style="background-image: url({{ url_for('static', filename='img/background.jpg') }});" class="page-container" >
+            <div class="header-wrapper">
+                <div class="header">
+                    <p class="header-text anim-typewriter">Welcome to the homepage!</p>
+                </div>
+                <div class="sub-header-wrapper">
+                    <div class="sub-header">
+                            On this page you can enter input as instructed below, or click on one the links to be redirected to a different page.<br>
+                    </div>
+                </div>
+            </div>
+            <div class="input-wrapper">
+                <input id="user_entry" placeholder="Input a comma separated list of integers. e.g. [1,2,6,10,3]" name="user_input" type="text" value="">
+
+                <button id="home_button_submit" class="submit-wrapper">
+                    <i id="submit_input" class="fas fa-plus"></i>
+                </button>
+            </div>
+            <div class="navigation-wrapper" id="home-nav">
+                <form class="form-home" action="/" method="POST">
+                    <h5> Output </h5>
+                    <button id="output-wrapper" class="button-wrapper" name="button_name" value="output" >
+                        <i id="output-button" class="fas fa-poll-h output-buttons"></i>
+                    </button>
+                </form>
+                <form class="form-home" action="/" method="POST">
+                    <h5>History</h5>
+                    <button id="history-wrapper" class="button-wrapper" name="button_name" value="history">
+                        <i id="history-button" class="fas fa-database output-buttons"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    <script type=text/javascript src="{{url_for('static', filename='js/index.js') }}"></script>
+    </body>
+</html>

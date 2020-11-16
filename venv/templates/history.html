@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+
+        <title>The HTML5 Herald</title>
+        <meta name="description" content="The HTML5 Herald">
+        <meta name="author" content="SitePoint">
+
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/output.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/history.css') }}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div style="background-image: url({{ url_for('static', filename='img/background.jpg') }});" class="page-container" >
+            <div class="navigation-wrapper history-nav">
+                <form action="/history" method="POST">
+                    <button id="home-wrapper" name="button_name" value="home" class="button-wrapper">
+                        <i id="home-button" class="fas fa-home output-buttons"></i>
+                    </button>
+                </form>
+                <form action="/history" method="POST">
+                    <button id="output-wrapper" class="button-wrapper" name="button_name" value="output" >
+                        <i id="output-button" class="fas fa-poll-h output-buttons"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="header-wrapper history-header">
+                <div class="header">
+                    <p class="header-text">Your history:</p>
+                </div>
+            </div>
+            <div class="history-wrapper">
+                <table id="history-table">
+                    <tr>
+                        <th> <div>Input</div> </th>
+                        <th> <div>Range</div> </th>
+                    </tr>
+                    {% for row in rows %}
+                        <tr>
+                            <td>{{ row.Input[1: row.Input|length -1] }} </td>
+                            <td>[{{ row.Start }}:{{ row.End}}]</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

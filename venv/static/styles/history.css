@@ -1,0 +1,61 @@
+.history-nav{
+    top: 20vh !important;
+}
+
+.history-header{
+    margin-top: 5vh;
+}
+
+.history-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+thead, tbody { display: block; }
+
+tbody {
+    height: 60vh;       /* Just for the demo          */
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
+}
+
+table {
+    width: 100%; /* Optional */
+}
+
+tbody td, thead th {
+    width: 20%;  /* Optional */
+}
+
+#history-table{
+    width: 60vw;
+    background: rgba(240,240,240, 1);
+    position: absolute;
+    top: 25vh;
+    border-collapse: collapse;
+    text-align: center;
+    max-height: 70vw;
+    overflow:scroll;
+}
+
+#history-table table{
+display: table;
+}
+
+#history-table td, #history-table  th {
+  border: 2px solid rgb(230,230,230);
+}
+
+#history-table  th {
+    background:rgba(225,180,10,1);
+    border: none;
+}
+
+#history-table tr{
+    height: 50px;
+}
+
+#tb_header_1{
+    border-right: 1px solid rgba(0,0,0,0.1) !important;
+}

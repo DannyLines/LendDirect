@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+
+        <title>The HTML5 Herald</title>
+        <meta name="description" content="The HTML5 Herald">
+        <meta name="author" content="SitePoint">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/output.css') }}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div style="background-image: url({{ url_for('static', filename='img/background.jpg') }});" class="page-container" >
+            <div class="header-wrapper">
+                <div class="header">
+                    <p class="header-text">Your input: {{user_input}}</p>
+                </div>
+                <div class="output-answer">
+                    <p class="header-text">Your answer: {{output_val}}</p>
+                </div>
+            </div>
+            <div class="navigation-wrapper">
+                <form action="/output" method="POST">
+                    <button id="home-wrapper" name="button_name" value="home" class="button-wrapper">
+                        <i id="home-button" class="fas fa-home output-buttons"></i>
+                    </button>
+                </form>
+                <form action="/output" method="POST">
+                    <button id="history-wrapper" class="button-wrapper" name="button_name" value="history">
+                        <i id="history-button" class="fas fa-database output-buttons"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
